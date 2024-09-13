@@ -33,6 +33,12 @@ class Calculator:
         } # The keys are the coordinates on where each keys should be
         self.operations={"/":"\u00f7", "*":"\u00d7", "-":"-", "+":"+"}
         
+        # make the buttons grow into the empty space
+        self.buttons_frame.rowconfigure(0, weight=1)
+        for x in range(1, 5):
+            self.buttons_frame.rowconfigure(x, weight=1)
+            self.buttons_frame.columnconfigure(x, weight=1)
+
         self.create_digits_button()
         self.create_operators_button()
         self.create_special_buttons()
